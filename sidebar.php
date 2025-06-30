@@ -29,17 +29,17 @@ $dataMasterPages = [
     'supplier.php',
     'pegawai.php',
     'ruangan.php',
-    'ruangan1.php', // Gudang
     'barangrusak.php'
 ];
 
 // Daftar halaman yang termasuk dalam grup "Pengadaan"
 $pengadaanPages = [
     'pengajuan.php',
-    'pembelian.php', // Jika ada
+    'pemesanan.php',
     'penerimaan.php',
-    'anggaran.php',
-    'pemesanan.php'
+    'pengajuan_anggaran.php',
+    'anggaran_disetujui.php',
+    'realisasi_anggaran.php'
 ];
 
 // Daftar halaman yang termasuk dalam grup "Kelola Barang"
@@ -59,8 +59,10 @@ $laporanPages = [
     'viewpengajuan.php',
     'viewpembelian.php',
     'viewpenerimaan.php',
-    'viewanggaran.php',
     'viewpemesanan.php',
+    'viewpengajuan_anggaran.php',
+    'viewanggaran_disetujui.php',
+    'viewrealisasi_anggaran.php',
     'viewinventaris.php',
     'viewpeminjaman.php',
     'viewmutasi.php',
@@ -127,7 +129,7 @@ function isActiveItem($currentPage, $itemPath) {
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo BASE_URL; ?>index.php">
-                <div class="sidebar-brand-icon rotate-n15">
+                <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
@@ -163,7 +165,6 @@ function isActiveItem($currentPage, $itemPath) {
                         <a class="collapse-item <?= isActiveItem($currentPage, 'supplier.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>supplier.php">Supplier</a>
                         <a class="collapse-item <?= isActiveItem($currentPage, 'pegawai.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>pegawai.php">Pegawai</a>
                         <a class="collapse-item <?= isActiveItem($currentPage, 'ruangan.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>ruangan.php">Ruangan</a>
-                        <a class="collapse-item <?= isActiveItem($currentPage, 'ruangan1.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>ruangan1.php">Gudang</a>
                         <a class="collapse-item <?= isActiveItem($currentPage, 'barangrusak.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>barangrusak.php">Barang Rusak</a>
                     </div>
                 </div>
@@ -186,7 +187,11 @@ function isActiveItem($currentPage, $itemPath) {
                             <span class="badge badge-danger badge-counter" id="pemesanan_count_badge" style="display: none;"></span>
                         </a>
                         <a class="collapse-item <?= isActiveItem($currentPage, 'penerimaan.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>penerimaan.php">Penerimaan</a>
-                        <a class="collapse-item <?= isActiveItem($currentPage, 'anggaran.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>anggaran.php">Anggaran</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Anggaran:</h6>
+                        <a class="collapse-item <?= isActiveItem($currentPage, 'pengajuan_anggaran.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>pengajuan_anggaran.php">Pengajuan Anggaran</a>
+                        <a class="collapse-item <?= isActiveItem($currentPage, 'anggaran_disetujui.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>anggaran_disetujui.php">Anggaran Disetujui</a>
+                        <a class="collapse-item <?= isActiveItem($currentPage, 'realisasi_anggaran.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>realisasi_anggaran.php">Realisasi Anggaran</a>
                     </div>
                 </div>
             </li>
@@ -229,7 +234,10 @@ function isActiveItem($currentPage, $itemPath) {
                         <a class="collapse-item <?= isActiveItem($currentPage, 'viewpengajuan.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>viewpengajuan.php">Laporan Pengajuan</a>
                         <a class="collapse-item <?= isActiveItem($currentPage, 'viewpemesanan.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>viewpemesanan.php">Laporan Pemesanan</a>
                         <a class="collapse-item <?= isActiveItem($currentPage, 'viewpenerimaan.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>viewpenerimaan.php">Laporan Penerimaan</a>
-                        <a class="collapse-item <?= isActiveItem($currentPage, 'viewanggaran.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>viewanggaran.php">Laporan Anggaran</a>
+                        <h6 class="collapse-header">Laporan Anggaran:</h6>
+                        <a class="collapse-item <?= isActiveItem($currentPage, 'viewpengajuan_anggaran.php') ? 'active' : ''; ?>" style="white-space: normal;" href="<?php echo BASE_URL; ?>viewpengajuan_anggaran.php">Laporan Pengajuan Anggaran</a>
+                        <a class="collapse-item <?= isActiveItem($currentPage, 'viewanggaran_disetujui.php') ? 'active' : ''; ?>" style="white-space: normal;" href="<?php echo BASE_URL; ?>viewanggaran_disetujui.php">Laporan Anggaran Disetujui</a>
+                        <a class="collapse-item <?= isActiveItem($currentPage, 'viewrealisasi_anggaran.php') ? 'active' : ''; ?>" style="white-space: normal;" href="<?php echo BASE_URL; ?>viewrealisasi_anggaran.php">Laporan Realisasi Anggaran</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Laporan Kelola Barang:</h6>
                         <a class="collapse-item <?= isActiveItem($currentPage, 'viewinventaris.php') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>viewinventaris.php">Laporan Inventaris</a>

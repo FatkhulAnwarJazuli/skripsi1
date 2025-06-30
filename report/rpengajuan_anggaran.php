@@ -306,7 +306,7 @@ header('Content-Type: text/html; charset=utf-8');
     <hr class="line-kop"> <div class="info-surat clearfix">
         <div class="kiri">
             <p>Nomor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 900/123/PRKM/2025</p>
-            <p>Perihal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Laporan Data Anggaran</p>
+            <p>Perihal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Pengajuan Pengadaan Barang</p>
             <p>Lampiran &nbsp;&nbsp;: -</p>
         </div>
         <div class="kanan">
@@ -315,7 +315,7 @@ header('Content-Type: text/html; charset=utf-8');
     </div>
 
     <div class="tujuan-surat">
-        <p>Kepada Yth. Kepala Dinas</p>
+        <p>Kepada Yth. Sekretariat Daerah Kota Banjarmasin</p>
         <p>Di -</p>
         <p class="indent">Banjarmasin</p>
     </div>
@@ -407,7 +407,7 @@ header('Content-Type: text/html; charset=utf-8');
     </p>
 
     <div class="signature-block clearfix">
-        <p class="kota-tgl">Banjarbaru, <?php echo $tgl; ?></p>
+        <p class="kota-tgl">Banjarmasin, <?php echo $tgl; ?></p>
         <p class="jabatan">Hormat Kami,</p>
         <p class="nama-pejabat"><b>H. Chandra Iriandhy Wijaya, ST.MM</b></p>
         <p class="nip">NIP. 19710726 200003 1 004</p>

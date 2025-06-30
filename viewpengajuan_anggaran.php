@@ -64,7 +64,7 @@ $pemesanan_options = mysqli_query($conn, "SELECT id_pemesanan, tanggal_pemesanan
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h6 class="m-0 font-weight-bold text-primary">Tabel Data Anggaran</h6>
             <div>
-                <button type="button" class="btn btn-info" onclick="window.open('report/ranggaran.php', '_blank');">
+                <button type="button" class="btn btn-info" onclick="window.open('report/rpengajuan_anggaran.php', '_blank');">
                     <i class="fas fa-print"></i> Cetak Data
                 </button>
             </div>
